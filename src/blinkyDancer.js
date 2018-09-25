@@ -20,6 +20,7 @@
 
 var BlinkyDancer = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node.append('<img class="blinkDancer" src="lib/images/dog3.gif">');
 };
 
 BlinkyDancer.prototype = Object.create(Dancer.prototype); // set inheritance
@@ -39,6 +40,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
 
 var Fatty = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node.append('<img class="fatDancer" src="lib/images/dog2.gif">');
 };
 
 Fatty.prototype = Object.create(Dancer.prototype);
@@ -47,12 +49,12 @@ Fatty.prototype.constructor = Fatty;
 Fatty.prototype.step = function() {
   Dancer.prototype.step.call(this);
   this.$node.animate({
-    width: '25px',
-    height: '25px'
-  }, 1000);
-  this.$node.animate({
     width: '1px',
     height: '1px'
+  }, 1000);
+  this.$node.animate({
+    width: '100px',
+    height: '100px'
   }, 1000);
 };
 
@@ -63,6 +65,7 @@ var makeFattyDancer = function(top, left, timeBetweenSteps) {
 
 var Shuffle = function(top, left, timeBetweenSteps) {
   Dancer.call(this, top, left, timeBetweenSteps);
+  this.$node.append('<img class="shuffleDancer" src="lib/images/dog1.gif">');
 };
 
 Shuffle.prototype = Object.create(Dancer.prototype);

@@ -36,10 +36,22 @@ $(document).ready(function() {
 
   $('.lineUpButton').on('click', function(event) {
     console.log(window.dancers);
-    for(var i = 0; i < window.dancers.length; i++) {
-      console.log('triggered');
-      window.dancers[i].lineUp();
-    }
+    lineUp(window.dancers);
+    // for(var i = 0; i < window.dancers.length; i++) {
+    //   console.log('triggered');
+    //   window.dancers[i].lineUp();
+    // }
+  });
+  
+  $('.pairUpButton').on('click', function(event) {  
+    movePairs(pairUp(window.dancers));
+  });
+  
+  $(document).on("mouseover", ".dancer", function() {
+    $(this).css({
+      transform: "rotate(180deg)",
+      opacity: "0.5"
+      });
   });
 });
 
